@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper device="DDJSX2" author="Atomix Productions" version="830" date="2018-07-13">
+	<info>http://www.virtualdj.com/manuals/hardware/pioneer/ddjsx2.html</info>
+	<map value="DNC_MODE" action="blink 150ms" />
+	<map value="DNC_DVS_ENABLE" action="var_equal &apos;@$sx2_dvs&apos; 1" />
+	<map value="DNC_DVS_DISABLE" action="var_equal &apos;@$sx2_dvs&apos; 0" />
+	<map value="DNC_DVS_PHONO_S1" action="var_equal &apos;@$sx2_dvs_phono&apos; 1" />
+	<map value="DNC_DVS_PHONO_S2" action="var_equal &apos;@$sx2_dvs_phono&apos; 1" />
+	<map value="DNC_DVS_PHONO2" action="var_equal &apos;@$sx2_dvs_phono&apos; 1" />
+	<map value="DNC_DVS_PHONO1" action="var_equal &apos;@$sx2_dvs_phono&apos; 1" />
+	<map value="DNC_DVS_LINE_S1" action="var_equal &apos;@$sx2_dvs_phono&apos; 0" />
+	<map value="DNC_DVS_LINE_S2" action="var_equal &apos;@$sx2_dvs_phono&apos; 0" />
+	<map value="DNC_DVS_LINE2" action="var_equal &apos;@$sx2_dvs_phono&apos; 0" />
+	<map value="DNC_DVS_LINE1" action="var_equal &apos;@$sx2_dvs_phono&apos; 0" />
+	<map value="LED_JOG" action="loaded ? play ? get_rotation : param_smaller 0.004 get_rotation ? constant 0.001 : param_bigger 0.996 get_rotation ? constant 0.001 : get_rotation" />
+	<map value="LED_JOG_INNER" action="load_pulse ? touchwheel_touch ? get_slip_active ? blink 200ms ? constant 0.99 : constant 0.0 : constant 0.99 : constant 0.0 : constant 0.0" />
+	<map value="LED_JOG_CDJ" action="songpos_remain 10000ms ? blink 250ms : songpos_remain 20000ms ? blink 500ms : songpos_remain 30000ms ? blink : off" />
+	<map value="LED_LOADED" action="load_pulse" />
+	<map value="DECK" action="action_deck 1 ? deck 1 leftdeck : action_deck 2 ? deck 2 rightdeck : action_deck 3 ? deck 3 leftdeck : action_deck 4 ? deck 4 rightdeck : nothing" />
+	<map value="DUAL_DECK_LEFT" action="toggle &apos;$dualdeckleft&apos;" />
+	<map value="DUAL_DECK_RIGHT" action="toggle &apos;$dualdeckright&apos;" />
+	<map value="SHIFT" action="shift" />
+	<map value="PLAY_PAUSE" action="pioneer_play" />
+	<map value="SHIFT_PLAY_PAUSE" action="play_stutter" />
+	<map value="CUE" action="pioneer_cue" />
+	<map value="SHIFT_CUE" action="pause &amp; goto_start" />
+	<map value="SYNC" action="sync" />
+	<map value="LED_SYNC" action="is_sync" />
+	<map value="SHIFT_SYNC" action="masterdeck" />
+	<map value="JOG_TOUCH" action="var &apos;CBGShift&apos; 1 ? nothing : var &apos;CBGWidth&apos; ? nothing : touchwheel_touch" />
+	<map value="JOG_VINYL" action="var &apos;CBGShift&apos; 1 ? adjust_cbg : var &apos;CBGWidth&apos; ? set_bpm : touchwheel" />
+	<map value="SHIFT_JOG_TOUCH" action="touchwheel_touch &apos;search&apos;" />
+	<map value="SHIFT_JOG" action="touchwheel &apos;search&apos;" />
+	<map value="JOG_OUT_RING" action="var &apos;CBGShift&apos; 1 ? adjust_cbg : var &apos;CBGWidth&apos; ? set_bpm : touchwheel" />
+	<map value="JOG_CD" action="var &apos;CBGShift&apos; 1 ? adjust_cbg : var &apos;CBGWidth&apos; ? set_bpm : touchwheel" />
+	<map value="SHIFT_JOG_OUT_RING" action="touchwheel &apos;search&apos;" />
+	<map value="AUTO_LOOP" action="loop" />
+	<map value="LOOP_HALF" action="loop_half &amp; down ? set &apos;LoopHalfON&apos; 1 : set &apos;LoopHalfON&apos; 0" />
+	<map value="LOOP_DOUBLE" action="loop_double &amp; down ? set &apos;LoopDoubleON&apos; 1 : set &apos;LoopDoubleON&apos; 0" />
+	<map value="LOOP_IN_HELD" action="play ? loop 4 &amp; loop_move -1000ms : loop 4" />
+	<map value="SHIFT_AUTO_LOOP" action="loop_load" />
+	<map value="SHIFT_LOOP_HALF" action="loop_move -100%" />
+	<map value="SHIFT_LOOP_DOUBLE" action="loop_move +100%" />
+	<map value="SHIFT_LOOP_IN" action="loop_load_prepare +1" />
+	<map value="SHIFT_LOOP_OUT" action="reloop_exit" />
+	<map value="LOOP_IN" action="loop ? loop_adjust &apos;in&apos; : loop_in" />
+	<map value="LOOP_OUT" action="loop ? loop_adjust &apos;out&apos; : loop_out" />
+	<map value="LED_LOOP_IN" action="loop_adjust &apos;in&apos; ? blink 300ms : loop_in" />
+	<map value="LED_LOOP_OUT" action="loop_adjust &apos;out&apos; ? blink 300ms : loop_out" />
+	<map value="LED_LOOP_HALF" action="var &apos;LoopHalfON&apos;" />
+	<map value="LED_LOOP_DOUBLE" action="var &apos;LoopDoubleON&apos;" />
+	<map value="SHIFT_LED_LOOP_HALF" action="loop" />
+	<map value="SHIFT_LED_LOOP_DOUBLE" action="loop" />
+	<map value="PITCH" action="pitch &apos;dual&apos;" />
+	<map value="SHIFT_PITCH" action="pitch" />
+	<map value="LED_PITCH_TAKEOVER+" action="param_bigger pitch_slider pitch ? on : off" />
+	<map value="LED_PITCH_TAKEOVER-" action="param_bigger pitch pitch_slider ? on : off" />
+	<map value="KEYLOCK" action="key_lock" />
+	<map value="KEYLOCK_HELD" action="pitch_reset" />
+	<map value="SHIFT_KEYLOCK" action="pitch_range +1" />
+	<map value="LED_KEYLOCK" action="pitch_reset ? blink : key_lock" />
+	<map value="LED_KEYLOCK_HELD" action="pitch_reset ? blink : key_lock" />
+	<map value="SHIFT_LED_KEYLOCK" action="pitch_range 12% ? on : off" />
+	<map value="SLIP" action="slip_mode" />
+	<map value="SHIFT_SLIP" action="vinyl_mode" />
+	<map value="LED_SLIP" action="get_slip_active ? blink 500ms : slip_mode" />
+	<map value="LED_SLIP_BLINK" action="slip_mode" />
+	<map value="SHIFT_LED_SLIP" action="vinyl_mode" />
+	<map value="CENSOR" action="dump while_pressed" />
+	<map value="SHIFT_CENSOR" action="reverse" />
+	<map value="LED_CENSOR" action="reverse ? dump ? on : blink : off" />
+	<map value="SHIFT_LED_CENSOR" action="reverse ? dump ? on : blink : off" />
+	<map value="GRID_ADJUST" action="down ? set &apos;CBGWidth&apos; 1 : set &apos;CBGWidth&apos; 0" />
+	<map value="GRID_SLIDE" action="down ? set &apos;CBGShift&apos; 1 : set &apos;CBGShift&apos; 0" />
+	<map value="SHIFT_GRID_ADJUST" action="set_firstbeat" />
+	<map value="SHIFT_GRID_SLIDE" action="reanalyze" />
+	<map value="NEEDLE_SEARCH_TOUCH" action="is_audible ? nothing : down ? play ? set &apos;ntplay&apos; 1 : play : var_equal &apos;ntplay&apos; 1 ? set &apos;ntplay&apos; 0 : pause" />
+	<map value="NEEDLE_SEARCH" action="is_audible ? nothing : song_pos" />
+	<map value="SHIFT_NEEDLE_SEARCH_TOUCH" action="down ? play ? set &apos;ntplay&apos; 1 : play : var_equal &apos;ntplay&apos; 1 ? set &apos;ntplay&apos; 0 : pause" />
+	<map value="SHIFT_NEEDLE_SEARCH" action="song_pos" />
+	<map value="ENC_BROWSE" action="browser_scroll" />
+	<map value="SHIFT_ENC_BROWSE" action="browser_window &apos;folders&apos; ? browser_scroll : browser_window &apos;folders&apos; on &amp; browser_scroll" />
+	<map value="BROWSE" action="browser_enter" />
+	<map value="SHIFT_BROWSE" action="browser_zoom" />
+	<map value="PANEL_SELECT" action="skin_panelgroup &apos;mixer&apos; +1" />
+	<map value="SHIFT_PANEL_SELECT" action="holding ? show_splitpanel &apos;info&apos; : show_splitpanel &apos;sideview&apos;" />
+	<map value="LOAD" action="var &apos;hwmixer&apos; ? nothing : holding ? unload : load" />
+	<map value="LED_LOAD" action="var &apos;hwmixer&apos; ? off : on" />
+	<map value="BROWSER_SORT" action="action_deck 1 ? browser_sort &apos;BPM&apos; : action_deck 2 ? browser_sort &apos;Title&apos; : action_deck 3 ? browser_sort &apos;Track&apos; : action_deck 4 ? browser_sort &apos;Author&apos; : nothing" />
+	<map value="BACK" action="browser_folder" />
+	<map value="SHIFT_BACK" action="browser_window -1" />
+	<map value="LOAD_PREPARE" action="playlist_add" />
+	<map value="SHIFT_LOAD_PREPARE" action="sideview +1" />
+	<map value="GAIN" action="var &apos;hwmixer&apos; ? nothing : param_smaller 80% ? gain : nothing" />
+	<map value="GAIN2" action="var &apos;hwmixer&apos; ? nothing : param_bigger 79% ? gain : nothing" />
+	<map value="EQ_HIGH" action="var &apos;hwmixer&apos; ? nothing : eq_high" />
+	<map value="EQ_MID" action="var &apos;hwmixer&apos; ? nothing : eq_mid" />
+	<map value="EQ_LOW" action="var &apos;hwmixer&apos; ? nothing : eq_low" />
+	<map value="FILTER" action="var &apos;hwmixer&apos; ? nothing : filter" />
+	<map value="FILTER_ON" action="var &apos;hwmixer&apos; ? nothing : down ? filter_activate on : filter_activate off" />
+	<map value="PFL" action="var &apos;hwmixer&apos; ? nothing : pfl" />
+	<map value="TAP" action="var &apos;hwmixer&apos; ? nothing : beat_tap" />
+	<map value="LED_TAP" action="var &apos;hwmixer&apos; ? nothing : play ? param_bigger 0.9 get_beatgrid ? on : off : off" />
+	<map value="VOLUME" action="var &apos;hwmixer&apos; ? nothing : volume" />
+	<map value="LED_VOLUME" action="var &apos;hwmixer&apos; ? nothing : get_level &amp; param_pow 0.5" />
+	<map value="FADER_START_CUE" action="var &apos;hwmixer&apos; ? nothing : cue_stop" />
+	<map value="FADER_START_PLAY" action="var &apos;hwmixer&apos; ? nothing : play" />
+	<map value="FADER_START_SYNC" action="var &apos;hwmixer&apos; ? nothing : sync" />
+	<map value="CF_ASSIGN_A" action="var &apos;hwmixer&apos; ? nothing : cross_assign &apos;left&apos;" />
+	<map value="CF_ASSIGN_THRU" action="var &apos;hwmixer&apos; ? nothing : cross_assign &apos;thru&apos;" />
+	<map value="CF_ASSIGN_B" action="var &apos;hwmixer&apos; ? nothing : cross_assign &apos;right&apos;" />
+	<map value="CROSSFADER" action="crossfader" />
+	<map value="CF_CURVE" action="crossfader_curve" />
+	<map value="INPUT_SELECT" action="down ? set &apos;hwmixer&apos; 1 &amp; mute on : set &apos;hwmixer&apos; 0 &amp; mute off" />
+	<map value="SAMPLER_VOLUME" action="sampler_volume_master" />
+	<map value="FX1_ASSIGN" action="effect_clone 1" />
+	<map value="FX2_ASSIGN" action="effect_clone 2" />
+	<map value="FX3_ASSIGN" action="effect_clone 3" />
+	<map value="FX4_ASSIGN" action="effect_clone 4" />
+	<map value="FX1_1" action="effect_slider 1" />
+	<map value="FX1_2" action="effect_3slots_layout ? effect_slider 2 1 : effect_slider 2" />
+	<map value="FX1_3" action="effect_3slots_layout ? effect_slider 3 1 : effect_slider 3" />
+	<map value="FX2_1" action="effect_slider 1" />
+	<map value="FX2_2" action="effect_3slots_layout ? effect_slider 2 1 : effect_slider 2" />
+	<map value="FX2_3" action="effect_3slots_layout ? effect_slider 3 1 : effect_slider 3" />
+	<map value="FX1_1_ON" action="effect_active 1" />
+	<map value="FX1_2_ON" action="effect_3slots_layout ? effect_active 2 : effect_select -1" />
+	<map value="FX1_3_ON" action="effect_3slots_layout ? effect_active 3 : effect_select +1" />
+	<map value="FX2_1_ON" action="effect_active 1" />
+	<map value="FX2_2_ON" action="effect_3slots_layout ? effect_active 2 : effect_select -1" />
+	<map value="FX2_3_ON" action="effect_3slots_layout ? effect_active 3 : effect_select +1" />
+	<map value="SHIFT_FX1_1" action="effect_3slots_layout ? effect_slider 1 2 : effect_slider 4" />
+	<map value="SHIFT_FX1_2" action="effect_3slots_layout ? effect_slider 2 2 : effect_slider 5" />
+	<map value="SHIFT_FX1_3" action="effect_3slots_layout ? effect_slider 3 2 : effect_slider 6" />
+	<map value="SHIFT_FX2_1" action="effect_3slots_layout ? effect_slider 1 2 : effect_slider 4" />
+	<map value="SHIFT_FX2_2" action="effect_3slots_layout ? effect_slider 2 2 : effect_slider 5" />
+	<map value="SHIFT_FX2_3" action="effect_3slots_layout ? effect_slider 3 2 : effect_slider 6" />
+	<map value="SHIFT_FX1_1_ON" action="effect_3slots_layout ? effect_select 1 +1 : effect button 1" />
+	<map value="SHIFT_FX1_2_ON" action="effect_3slots_layout ? effect_select 2 +1 : effect_button 2" />
+	<map value="SHIFT_FX1_3_ON" action="effect_3slots_layout ? effect_select 3 +1 : effect button 3" />
+	<map value="SHIFT_FX2_1_ON" action="effect_3slots_layout ? effect_select 1 +1 : effect button 1" />
+	<map value="SHIFT_FX2_2_ON" action="effect_3slots_layout ? effect_select 2 +1 : effect_button 2" />
+	<map value="SHIFT_FX2_3_ON" action="effect_3slots_layout ? effect_select 3 +1 : effect button 3" />
+	<map value="FX1_ENC_BEATS" action="param_smaller 0 ? effect_beats -1 : effect_beats +1" />
+	<map value="FX2_ENC_BEATS" action="param_smaller 0 ? effect_beats -1 : effect_beats +1" />
+	<map value="FX1_BEATS" action="effect_beats 4" />
+	<map value="FX2_BEATS" action="effect_beats 4" />
+	<map value="FX1_TAP" action="set &apos;FX1Tap&apos; 1 while_pressed &amp; beat_tap" />
+	<map value="FX2_TAP" action="set &apos;FX2Tap&apos; 1 while_pressed &amp; beat_tap" />
+	<map value="LED_FX1_TAP" action="var &apos;FX1Tap&apos; " />
+	<map value="LED_FX2_TAP" action="var &apos;FX2Tap&apos; " />
+	<map value="SHIFT_FX1_ENC_BEATS" action="key_move" />
+	<map value="SHIFT_FX2_ENC_BEATS" action="key_move" />
+	<map value="SHIFT_FX1_BEATS" action="key 0" />
+	<map value="SHIFT_FX2_BEATS" action="key 0" />
+	<map value="SHIFT_FX1_TAP" action="effect_3slots_layout" />
+	<map value="SHIFT_FX2_TAP" action="effect_3slots_layout" />
+	<map value="SHIFT_LED_FX1_TAP" action="effect_3slots_layout" />
+	<map value="SHIFT_LED_FX2_TAP" action="effect_3slots_layout" />
+	<map value="PAD_MODE_HOTCUE_HELD" action="smart_cue" />
+	<map value="PAD_MODE_HOTCUE" action="pad_page &apos;hotcues&apos;" />
+	<map value="PAD_MODE_ROLL" action="pad_page &apos;loop roll&apos;" />
+	<map value="PAD_MODE_SLICER" action="pad_page &apos;slicer&apos;" />
+	<map value="PAD_MODE_SAMPLER" action="pad_page &apos;sampler&apos; &amp; pad_pressure_switch off" />
+	<map value="PAD_MODE_CUE_LOOP" action="pad_page &apos;cueloop&apos;" />
+	<map value="PAD_MODE_SAVED_LOOP" action="pad_page &apos;Saved Loops&apos;" />
+	<map value="PAD_MODE_SLICER_LOOP" action="pad_page &apos;beatjump&apos;" />
+	<map value="PAD_MODE_SAMPLER_VEL" action="pad_page &apos;sampler&apos; &amp; pad_pressure_switch on" />
+	<map value="LED_PAD_MODE_HOTCUE" action="pad_page &apos;hotcues&apos;" />
+	<map value="LED_PAD_MODE_ROLL" action="pad_page &apos;loop roll&apos;" />
+	<map value="LED_PAD_MODE_SLICER" action="pad_page &apos;slicer&apos;" />
+	<map value="LED_PAD_MODE_SAMPLER" action="pad_page &apos;sampler&apos; ? pad_pressure_switch off ? true : false" />
+	<map value="LED_PAD_MODE_CUE_LOOP" action="pad_page &apos;cueloop&apos;" />
+	<map value="LED_PAD_MODE_SAVED_LOOP" action="pad_page &apos;Saved Loops&apos;" />
+	<map value="LED_PAD_MODE_SLICER_LOOP" action="pad_page &apos;beatjump&apos;" />
+	<map value="LED_PAD_MODE_SAMPLER_VEL" action="pad_page &apos;sampler&apos; ? pad_pressure_switch on ? true : false" />
+	<map value="HOTCUE_PAD1" action="pad 1" />
+	<map value="HOTCUE_PAD2" action="pad 2" />
+	<map value="HOTCUE_PAD3" action="pad 3" />
+	<map value="HOTCUE_PAD4" action="pad 4" />
+	<map value="HOTCUE_PAD5" action="pad 5" />
+	<map value="HOTCUE_PAD6" action="pad 6" />
+	<map value="HOTCUE_PAD7" action="pad 7" />
+	<map value="HOTCUE_PAD8" action="pad 8" />
+	<map value="SHIFT_HOTCUE_PAD1" action="padshift 1" />
+	<map value="SHIFT_HOTCUE_PAD2" action="padshift 2" />
+	<map value="SHIFT_HOTCUE_PAD3" action="padshift 3" />
+	<map value="SHIFT_HOTCUE_PAD4" action="padshift 4" />
+	<map value="SHIFT_HOTCUE_PAD5" action="padshift 5" />
+	<map value="SHIFT_HOTCUE_PAD6" action="padshift 6" />
+	<map value="SHIFT_HOTCUE_PAD7" action="padshift 7" />
+	<map value="SHIFT_HOTCUE_PAD8" action="padshift 8" />
+	<map value="LED_HOTCUE_PAD1" action="pad_button_color 1" />
+	<map value="LED_HOTCUE_PAD2" action="pad_button_color 2" />
+	<map value="LED_HOTCUE_PAD3" action="pad_button_color 3" />
+	<map value="LED_HOTCUE_PAD4" action="pad_button_color 4" />
+	<map value="LED_HOTCUE_PAD5" action="pad_button_color 5" />
+	<map value="LED_HOTCUE_PAD6" action="pad_button_color 6" />
+	<map value="LED_HOTCUE_PAD7" action="pad_button_color 7" />
+	<map value="LED_HOTCUE_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_HOTCUE_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_HOTCUE_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_HOTCUE_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_HOTCUE_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_HOTCUE_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_HOTCUE_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_HOTCUE_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_HOTCUE_PAD8" action="padshift_button_color 8" />
+	<map value="HOTCUE_PARAM-" action="pad_param -1" />
+	<map value="HOTCUE_PARAM+" action="pad_param +1" />
+	<map value="SHIFT_HOTCUE_PARAM+" action="pad_param2 +1" />
+	<map value="SHIFT_HOTCUE_PARAM-" action="pad_param2 -1" />
+	<map value="CUE_LOOP_PAD1" action="pad 1" />
+	<map value="CUE_LOOP_PAD2" action="pad 2" />
+	<map value="CUE_LOOP_PAD3" action="pad 3" />
+	<map value="CUE_LOOP_PAD4" action="pad 4" />
+	<map value="CUE_LOOP_PAD5" action="pad 5" />
+	<map value="CUE_LOOP_PAD6" action="pad 6" />
+	<map value="CUE_LOOP_PAD7" action="pad 7" />
+	<map value="CUE_LOOP_PAD8" action="pad 8" />
+	<map value="SHIFT_CUE_LOOP_PAD1" action="padshift 1" />
+	<map value="SHIFT_CUE_LOOP_PAD2" action="padshift 2" />
+	<map value="SHIFT_CUE_LOOP_PAD3" action="padshift 3" />
+	<map value="SHIFT_CUE_LOOP_PAD4" action="padshift 4" />
+	<map value="SHIFT_CUE_LOOP_PAD5" action="padshift 5" />
+	<map value="SHIFT_CUE_LOOP_PAD6" action="padshift 6" />
+	<map value="SHIFT_CUE_LOOP_PAD7" action="padshift 7" />
+	<map value="SHIFT_CUE_LOOP_PAD8" action="padshift 8" />
+	<map value="LED_CUE_LOOP_PAD1" action="pad_button_color 1" />
+	<map value="LED_CUE_LOOP_PAD2" action="pad_button_color 2" />
+	<map value="LED_CUE_LOOP_PAD3" action="pad_button_color 3" />
+	<map value="LED_CUE_LOOP_PAD4" action="pad_button_color 4" />
+	<map value="LED_CUE_LOOP_PAD5" action="pad_button_color 5" />
+	<map value="LED_CUE_LOOP_PAD6" action="pad_button_color 6" />
+	<map value="LED_CUE_LOOP_PAD7" action="pad_button_color 7" />
+	<map value="LED_CUE_LOOP_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_CUE_LOOP_PAD8" action="padshift_button_color 8" />
+	<map value="CUE_LOOP_PARAM-" action="pad_param -1" />
+	<map value="CUE_LOOP_PARAM+" action="pad_param +1" />
+	<map value="SHIFT_CUE_LOOP_PARAM-" action="pad_param2 -1" />
+	<map value="SHIFT_CUE_LOOP_PARAM+" action="pad_param2 +1" />
+	<map value="ROLL_PAD1" action="pad 1" />
+	<map value="ROLL_PAD2" action="pad 2" />
+	<map value="ROLL_PAD3" action="pad 3" />
+	<map value="ROLL_PAD4" action="pad 4" />
+	<map value="ROLL_PAD5" action="pad 5" />
+	<map value="ROLL_PAD6" action="pad 6" />
+	<map value="ROLL_PAD7" action="pad 7" />
+	<map value="ROLL_PAD8" action="pad 8" />
+	<map value="SHIFT_ROLL_PAD1" action="padshift 1" />
+	<map value="SHIFT_ROLL_PAD2" action="padshift 2" />
+	<map value="SHIFT_ROLL_PAD3" action="padshift 3" />
+	<map value="SHIFT_ROLL_PAD4" action="padshift 4" />
+	<map value="SHIFT_ROLL_PAD5" action="padshift 5" />
+	<map value="SHIFT_ROLL_PAD6" action="padshift 6" />
+	<map value="SHIFT_ROLL_PAD7" action="padshift 7" />
+	<map value="SHIFT_ROLL_PAD8" action="padshift 8" />
+	<map value="LED_ROLL_PAD1" action="pad_button_color 1" />
+	<map value="LED_ROLL_PAD2" action="pad_button_color 2" />
+	<map value="LED_ROLL_PAD3" action="pad_button_color 3" />
+	<map value="LED_ROLL_PAD4" action="pad_button_color 4" />
+	<map value="LED_ROLL_PAD5" action="pad_button_color 5" />
+	<map value="LED_ROLL_PAD6" action="pad_button_color 6" />
+	<map value="LED_ROLL_PAD7" action="pad_button_color 7" />
+	<map value="LED_ROLL_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_ROLL_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_ROLL_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_ROLL_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_ROLL_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_ROLL_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_ROLL_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_ROLL_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_ROLL_PAD8" action="padshift_button_color 8" />
+	<map value="ROLL_PARAM-" action="pad_param -1" />
+	<map value="ROLL_PARAM+" action="pad_param +1" />
+	<map value="SHIFT_ROLL_PARAM-" action="pad_param2 -1" />
+	<map value="SHIFT_ROLL_PARAM+" action="pad_param2 +1" />
+	<map value="SAVED_LOOP_PAD1" action="pad 1" />
+	<map value="SAVED_LOOP_PAD2" action="pad 2" />
+	<map value="SAVED_LOOP_PAD3" action="pad 3" />
+	<map value="SAVED_LOOP_PAD4" action="pad 4" />
+	<map value="SAVED_LOOP_PAD5" action="pad 5" />
+	<map value="SAVED_LOOP_PAD6" action="pad 6" />
+	<map value="SAVED_LOOP_PAD7" action="pad 7" />
+	<map value="SAVED_LOOP_PAD8" action="pad 8" />
+	<map value="SHIFT_SAVED_LOOP_PAD1" action="padshift 1" />
+	<map value="SHIFT_SAVED_LOOP_PAD2" action="padshift 2" />
+	<map value="SHIFT_SAVED_LOOP_PAD3" action="padshift 3" />
+	<map value="SHIFT_SAVED_LOOP_PAD4" action="padshift 4" />
+	<map value="SHIFT_SAVED_LOOP_PAD5" action="padshift 5" />
+	<map value="SHIFT_SAVED_LOOP_PAD6" action="padshift 6" />
+	<map value="SHIFT_SAVED_LOOP_PAD7" action="padshift 7" />
+	<map value="SHIFT_SAVED_LOOP_PAD8" action="padshift 8" />
+	<map value="LED_SAVED_LOOP_PAD1" action="pad_button_color 1" />
+	<map value="LED_SAVED_LOOP_PAD2" action="pad_button_color 2" />
+	<map value="LED_SAVED_LOOP_PAD3" action="pad_button_color 3" />
+	<map value="LED_SAVED_LOOP_PAD4" action="pad_button_color 4" />
+	<map value="LED_SAVED_LOOP_PAD5" action="pad_button_color 5" />
+	<map value="LED_SAVED_LOOP_PAD6" action="pad_button_color 6" />
+	<map value="LED_SAVED_LOOP_PAD7" action="pad_button_color 7" />
+	<map value="LED_SAVED_LOOP_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_SAVED_LOOP_PAD8" action="padshift_button_color 8" />
+	<map value="SAVED_LOOP_PARAM-" action="pad_param -1" />
+	<map value="SAVED_LOOP_PARAM+" action="pad_param +1" />
+	<map value="SHIFT_SAVED_LOOP_PARAM-" action="pad_param2 -1" />
+	<map value="SHIFT_SAVED_LOOP_PARAM+" action="pad_param2 +1" />
+	<map value="SLICER_PAD1" action="pad 1" />
+	<map value="SLICER_PAD2" action="pad 2" />
+	<map value="SLICER_PAD3" action="pad 3" />
+	<map value="SLICER_PAD4" action="pad 4" />
+	<map value="SLICER_PAD5" action="pad 5" />
+	<map value="SLICER_PAD6" action="pad 6" />
+	<map value="SLICER_PAD7" action="pad 7" />
+	<map value="SLICER_PAD8" action="pad 8" />
+	<map value="SHIFT_SLICER_PAD1" action="padshift 1" />
+	<map value="SHIFT_SLICER_PAD2" action="padshift 2" />
+	<map value="SHIFT_SLICER_PAD3" action="padshift 3" />
+	<map value="SHIFT_SLICER_PAD4" action="padshift 4" />
+	<map value="SHIFT_SLICER_PAD5" action="padshift 5" />
+	<map value="SHIFT_SLICER_PAD6" action="padshift 6" />
+	<map value="SHIFT_SLICER_PAD7" action="padshift 7" />
+	<map value="SHIFT_SLICER_PAD8" action="padshift 8" />
+	<map value="LED_SLICER_PAD1" action="pad_button_color 1" />
+	<map value="LED_SLICER_PAD2" action="pad_button_color 2" />
+	<map value="LED_SLICER_PAD3" action="pad_button_color 3" />
+	<map value="LED_SLICER_PAD4" action="pad_button_color 4" />
+	<map value="LED_SLICER_PAD5" action="pad_button_color 5" />
+	<map value="LED_SLICER_PAD6" action="pad_button_color 6" />
+	<map value="LED_SLICER_PAD7" action="pad_button_color 7" />
+	<map value="LED_SLICER_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_SLICER_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_SLICER_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_SLICER_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_SLICER_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_SLICER_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_SLICER_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_SLICER_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_SLICER_PAD8" action="padshift_button_color 8" />
+	<map value="SLICER_PARAM+" action="pad_param +1" />
+	<map value="SLICER_PARAM-" action="pad_param -1" />
+	<map value="SHIFT_SLICER_PARAM-" action="pad_param2 -1" />
+	<map value="SHIFT_SLICER_PARAM+" action="pad_param2 +1" />
+	<map value="SLICER_LOOP_PAD1" action="pad 1" />
+	<map value="SLICER_LOOP_PAD2" action="pad 2" />
+	<map value="SLICER_LOOP_PAD3" action="pad 3" />
+	<map value="SLICER_LOOP_PAD4" action="pad 4" />
+	<map value="SLICER_LOOP_PAD5" action="pad 5" />
+	<map value="SLICER_LOOP_PAD6" action="pad 6" />
+	<map value="SLICER_LOOP_PAD7" action="pad 7" />
+	<map value="SLICER_LOOP_PAD8" action="pad 8" />
+	<map value="SHIFT_SLICER_LOOP_PAD1" action="padshift 1" />
+	<map value="SHIFT_SLICER_LOOP_PAD2" action="padshift 2" />
+	<map value="SHIFT_SLICER_LOOP_PAD3" action="padshift 3" />
+	<map value="SHIFT_SLICER_LOOP_PAD4" action="padshift 4" />
+	<map value="SHIFT_SLICER_LOOP_PAD5" action="padshift 5" />
+	<map value="SHIFT_SLICER_LOOP_PAD6" action="padshift 6" />
+	<map value="SHIFT_SLICER_LOOP_PAD7" action="padshift 7" />
+	<map value="SHIFT_SLICER_LOOP_PAD8" action="padshift 8" />
+	<map value="LED_SLICER_LOOP_PAD1" action="pad_button_color 1" />
+	<map value="LED_SLICER_LOOP_PAD2" action="pad_button_color 2" />
+	<map value="LED_SLICER_LOOP_PAD3" action="pad_button_color 3" />
+	<map value="LED_SLICER_LOOP_PAD4" action="pad_button_color 4" />
+	<map value="LED_SLICER_LOOP_PAD5" action="pad_button_color 5" />
+	<map value="LED_SLICER_LOOP_PAD6" action="pad_button_color 6" />
+	<map value="LED_SLICER_LOOP_PAD7" action="pad_button_color 7" />
+	<map value="LED_SLICER_LOOP_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_SLICER_LOOP_PAD8" action="padshift_button_color 8" />
+	<map value="SLICER_LOOP_PARAM+" action="pad_param -1" />
+	<map value="SLICER_LOOP_PARAM-" action="pad_param +1" />
+	<map value="SHIFT_SLICER_LOOP_PARAM-" action="pad_param2 -1" />
+	<map value="SHIFT_SLICER_LOOP_PARAM+" action="pad_param2 +1" />
+	<map value="SAMPLER_PAD1" action="pad 1" />
+	<map value="SAMPLER_PAD2" action="pad 2" />
+	<map value="SAMPLER_PAD3" action="pad 3" />
+	<map value="SAMPLER_PAD4" action="pad 4" />
+	<map value="SAMPLER_PAD5" action="pad 5" />
+	<map value="SAMPLER_PAD6" action="pad 6" />
+	<map value="SAMPLER_PAD7" action="pad 7" />
+	<map value="SAMPLER_PAD8" action="pad 8" />
+	<map value="SHIFT_SAMPLER_PAD1" action="padshift 1" />
+	<map value="SHIFT_SAMPLER_PAD2" action="padshift 2" />
+	<map value="SHIFT_SAMPLER_PAD3" action="padshift 3" />
+	<map value="SHIFT_SAMPLER_PAD4" action="padshift 4" />
+	<map value="SHIFT_SAMPLER_PAD5" action="padshift 5" />
+	<map value="SHIFT_SAMPLER_PAD6" action="padshift 6" />
+	<map value="SHIFT_SAMPLER_PAD7" action="padshift 7" />
+	<map value="SHIFT_SAMPLER_PAD8" action="padshift 8" />
+	<map value="LED_SAMPLER_PAD1" action="pad_button_color 1" />
+	<map value="LED_SAMPLER_PAD2" action="pad_button_color 2" />
+	<map value="LED_SAMPLER_PAD3" action="pad_button_color 3" />
+	<map value="LED_SAMPLER_PAD4" action="pad_button_color 4" />
+	<map value="LED_SAMPLER_PAD5" action="pad_button_color 5" />
+	<map value="LED_SAMPLER_PAD6" action="pad_button_color 6" />
+	<map value="LED_SAMPLER_PAD7" action="pad_button_color 7" />
+	<map value="LED_SAMPLER_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_SAMPLER_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_SAMPLER_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_SAMPLER_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_SAMPLER_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_SAMPLER_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_SAMPLER_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_SAMPLER_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_SAMPLER_PAD8" action="padshift_button_color 8" />
+	<map value="SAMPLER_PARAM+" action="pad_param +1" />
+	<map value="SAMPLER_PARAM-" action="pad_param -1" />
+	<map value="SHIFT_SAMPLER_PARAM-" action="pad_param2 -1" />
+	<map value="SHIFT_SAMPLER_PARAM+" action="pad_param2 +1" />
+	<map value="SAMPLER_VEL_PAD1" action="pad 1" />
+	<map value="SAMPLER_VEL_PAD2" action="pad 2" />
+	<map value="SAMPLER_VEL_PAD3" action="pad 3" />
+	<map value="SAMPLER_VEL_PAD4" action="pad 4" />
+	<map value="SAMPLER_VEL_PAD5" action="pad 5" />
+	<map value="SAMPLER_VEL_PAD6" action="pad 6" />
+	<map value="SAMPLER_VEL_PAD7" action="pad 7" />
+	<map value="SAMPLER_VEL_PAD8" action="pad 8" />
+	<map value="SHIFT_SAMPLER_VEL_PAD1" action="padshift 1" />
+	<map value="SHIFT_SAMPLER_VEL_PAD2" action="padshift 2" />
+	<map value="SHIFT_SAMPLER_VEL_PAD3" action="padshift 3" />
+	<map value="SHIFT_SAMPLER_VEL_PAD4" action="padshift 4" />
+	<map value="SHIFT_SAMPLER_VEL_PAD5" action="padshift 5" />
+	<map value="SHIFT_SAMPLER_VEL_PAD6" action="padshift 6" />
+	<map value="SHIFT_SAMPLER_VEL_PAD7" action="padshift 7" />
+	<map value="SHIFT_SAMPLER_VEL_PAD8" action="padshift 8" />
+	<map value="LED_SAMPLER_VEL_PAD1" action="pad_button_color 1" />
+	<map value="LED_SAMPLER_VEL_PAD2" action="pad_button_color 2" />
+	<map value="LED_SAMPLER_VEL_PAD3" action="pad_button_color 3" />
+	<map value="LED_SAMPLER_VEL_PAD4" action="pad_button_color 4" />
+	<map value="LED_SAMPLER_VEL_PAD5" action="pad_button_color 5" />
+	<map value="LED_SAMPLER_VEL_PAD6" action="pad_button_color 6" />
+	<map value="LED_SAMPLER_VEL_PAD7" action="pad_button_color 7" />
+	<map value="LED_SAMPLER_VEL_PAD8" action="pad_button_color 8" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD1" action="padshift_button_color 1" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD2" action="padshift_button_color 2" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD3" action="padshift_button_color 3" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD4" action="padshift_button_color 4" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD5" action="padshift_button_color 5" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD6" action="padshift_button_color 6" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD7" action="padshift_button_color 7" />
+	<map value="SHIFT_LED_SAMPLER_VEL_PAD8" action="padshift_button_color 8" />
+	<map value="SAMPLER_VEL_PAD1_VELOCITY" action="pad_pressure 1" />
+	<map value="SAMPLER_VEL_PAD2_VELOCITY" action="pad_pressure 2" />
+	<map value="SAMPLER_VEL_PAD3_VELOCITY" action="pad_pressure 3" />
+	<map value="SAMPLER_VEL_PAD4_VELOCITY" action="pad_pressure 4" />
+	<map value="SAMPLER_VEL_PAD5_VELOCITY" action="pad_pressure 5" />
+	<map value="SAMPLER_VEL_PAD6_VELOCITY" action="pad_pressure 6" />
+	<map value="SAMPLER_VEL_PAD7_VELOCITY" action="pad_pressure 7" />
+	<map value="SAMPLER_VEL_PAD8_VELOCITY" action="pad_pressure 8" />
+	<map value="SAMPLER_VEL_PARAM+" action="pad_param +1" />
+	<map value="SAMPLER_VEL_PARAM-" action="pad_param -1" />
+	<map value="SHIFT_SAMPLER_VEL_PARAM-" action="pad_param2 -1" />
+	<map value="SHIFT_SAMPLER_VEL_PARAM+" action="pad_param2 +1" />
+	<map value="FLIP_START" action="prelisten" />
+	<map value="FLIP_REC" action="goto +16" />
+	<map value="SHIFT_FLIP_REC" action="goto -4" />
+</mapper>
