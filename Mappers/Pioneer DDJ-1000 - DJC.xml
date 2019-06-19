@@ -137,10 +137,8 @@
 	<map value="PAD_MODE_KEYSHIFT" action="pad_page &apos;keycue&apos;" />
 	<map value="PAD_MODE_KEYBOARD" action="pad_page &apos;cueloop&apos;" />
 	<map value="PAD_MODE_SAMPLER" action="pad_page &apos;sampler&apos; " />
-	<map value="PAD_MODE_BEATJUMP" action="pad_page &apos;beatjump&apos;" />
 	<map value="PAD_MODE_PADFX2" action="pad_page &apos;pad fx2&apos;" />
 	<map value="PAD_MODE_BEATLOOP" action="pad_page &apos;loop&apos;" />
-	<map value="PAD_MODE_PADFX1" action="pad_page &apos;pad fx1&apos;" />
 	<map value="LED_PAD_MODE_HOTCUE" action="pad_page &apos;hotcues 16&apos; ? color &apos;violet&apos; : pad_page &apos;DDJ1K Settings&apos; ? blink ? color &apos;red&apos; : color 50% &apos;red&apos; : off" />
 	<map value="LED_PAD_MODE_KEYSHIFT" action="pad_page &apos;keycue&apos; ? color &apos;yellow&apos; : off" />
 	<map value="LED_PAD_MODE_KEYBOARD" action="pad_page &apos;cueloop&apos; ? color &apos;yellow&apos; : off" />

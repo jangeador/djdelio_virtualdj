@@ -59,12 +59,10 @@
 	<map value="PAD_MODE_SAMPLER" action="pad_page &apos;sampler&apos; ? pad_bank2 : pad_page &apos;sampler&apos; &amp; pad_bank2 off" />
 	<map value="PAD_MODE_PADFX2" action="pad_page &apos;ROLL+SLICER&apos; ? pad_bank2:  pad_page &apos;ROLL+SLICER&apos; &amp; pad_bank2 off" />
 	<map value="PAD_MODE_BEATLOOP" action="pad_page &apos;LOOP + HC&apos; ? pad_bank2 : pad_page &apos;LOOP + HC&apos; &amp; pad_bank2 off" />
-	<map value="PAD_MODE_PADFX1" action="pad_page &apos;PAD FX&apos; ? pad_bank2 : pad_page &apos;PAD FX&apos; &amp; pad_bank2 off" />
 	<map value="LED_PAD_MODE_HOTCUE" action="pad_page &apos;hotcues&apos; ? color &apos;violet&apos; : off" />
 	<map value="LED_PAD_MODE_KEYSHIFT" action="pad_page &apos;keycue&apos; ? color &apos;yellow&apos; : off" />
 	<map value="LED_PAD_MODE_KEYBOARD" action="pad_page &apos;cueloop&apos; ? color &apos;yellow&apos; : off" />
 	<map value="LED_PAD_MODE_SAMPLER" action="pad_page &apos;sampler&apos; ? color &apos;violet&apos; : off" />
-	<map value="LED_PAD_MODE_BEATJUMP" action="pad_page &apos;BEATJUMP+HC&apos; ? color &apos;violet&apos; : off" />
 	<map value="LED_PAD_MODE_PADFX2" action="pad_page &apos;ROLL+SLICER&apos; ? color &apos;yellow&apos; : off" />
 	<map value="LED_PAD_MODE_BEATLOOP" action="pad_page &apos;LOOP + HC&apos; ? color &apos;yellow&apos; : off " />
 	<map value="LED_PAD_MODE_PADFX1" action="pad_page &apos;PAD FX&apos; ? color &apos;violet&apos; : off" />
