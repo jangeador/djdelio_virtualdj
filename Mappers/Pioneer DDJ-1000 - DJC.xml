@@ -804,4 +804,6 @@
 	<map value="DNC_OUT_FX_BRIGHTNESS2" action="var_equal &apos;@$ddj1k_fxbright&apos; 1" />
 	<map value="DNC_OUT_FX_BRIGHTNESS3" action="var_equal &apos;@$ddj1k_fxbright&apos; 0" />
 	<map value="DNC_SLIP_BLINK" action="var_equal &apos;@$ddj1k_slipblink&apos; 1 ? slip_mode : off" />
+	<map value="PAD_MODE_BEATJUMP" action="pad_page &apos;beatjump&apos; ? pad_page &apos;custom16&apos;  : pad_page &apos;beatjump&apos;" />
+	<map value="PAD_MODE_PADFX1" action="pad_page &apos;pad fx1&apos; ? pad_page &apos;scratch&apos;  : pad_page &apos;pad fx1&apos;" />
 </mapper>

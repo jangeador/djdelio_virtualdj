@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page name="custom">
-	<pad1 name="CUE 1" color="color &apos;red&apos;">hot_cue 1</pad1>
-	<pad8 color="color &apos;white&apos;" name="PRELISTEN">prelisten</pad8>
-	<pad4 color="color &apos;white&apos;" name="FIRST BEAT">set_firstbeat</pad4>
-	<pad3 name="BRAKE" color="color &apos;green&apos;">padfx &quot;Loop Out&quot; 30%</pad3>
-	<pad7 name="BRAKE" color="color &apos;red&apos;">padfx &quot;Brakestart&quot; 0.5</pad7>
-	<pad2 name="CUE 2" color="color &apos;yellow&apos;">hot_cue 2</pad2>
-	<pad5 name="S_BRAKE" color="color &apos;violet&apos;">slip on &amp; effect_active &apos;brakeStart&apos; &amp; repeat_start_instant &apos;rsibrakeStart&apos; 10ms &amp; effect_active &apos;brakeStart&apos; 1 ? nothing : repeat_stop &apos;rsibrakeStart&apos; &amp; play &amp; slip off</pad5>
-	<pad6 name="BACKSPIN" color="color &apos;pink&apos;">set &apos;rsGainBS&apos; &apos;`gain&apos; &amp; gain -20% &amp; slip on &amp; effect_active &apos;backspin&apos; &amp; repeat_start_instant &apos;rsiBackSpin&apos; 10ms &amp; effect_active &apos;backspin&apos; 1 ? nothing : repeat_stop &apos;rsiBackSpin&apos; &amp; play &amp; slip off &amp; get_var &apos;rsGainBS&apos; &amp; param_cast &amp; gain</pad6>
+    <pad1 name="CUE 1" color="color &apos;red&apos;">hot_cue 1</pad1>
+    <pad2 name="CUE 2" color="color &apos;red&apos;">hot_cue 2</pad2>
+    <pad3 name="PRELISTEN" color="color &apos;white&apos;">prelisten</pad3>
+    <pad4 color="color &apos;green&apos;" name="FIRST BEAT">set_firstbeat</pad4>
+    <pad5 name="BEAT_TAP" color="color &apos;magenta&apos;">beat_tap</pad5>
+    <pad6 name="BPM_MULTI" color="color &apos;magenta&apos;">reanalyze multi</pad6>
+    <pad7 name="-16 BEATS" color="color &apos;blue&apos;">goto -16</pad7>
+    <pad8  name="+16 BEATS" color="color &apos;blue&apos;">goto +16</pad8>
+    <shift_pad6 name="BPM_SINGLE">reanalyze</shift_pad6>
 </page>

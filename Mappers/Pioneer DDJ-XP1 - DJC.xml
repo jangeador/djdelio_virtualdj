@@ -612,5 +612,6 @@
 	<map value="KEYSHIFT_PARAM+" action="pad_param +1" />
 	<map value="SHIFT_KEYSHIFT_PARAM-" action="pad_param2 -1" />
 	<map value="SHIFT_KEYSHIFT_PARAM+" action="pad_param2 +1" />
-	<map value="PAD_MODE_BEATJUMP" action="pad_page &apos;BEATJUMP+HC&apos; ? pad_page &apos;scratch&apos;  : pad_page &apos;BEATJUMP+HC&apos;" />
+	<map value="PAD_MODE_BEATJUMP" action="pad_page &apos;BEATJUMP+HC&apos; ? pad_page &apos;custom16&apos;  : pad_page &apos;BEATJUMP+HC&apos;" />
+	<map value="PAD_MODE_PADFX1" action="pad_page &apos;PAD FX&apos; ? pad_page &apos;scratch&apos;  : pad_page &apos;PAD FX&apos;" />
 </mapper>

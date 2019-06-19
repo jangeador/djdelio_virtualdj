@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page name="custom">
+	<pad1 name="CUE 1" color="color &apos;red&apos;">hot_cue 1</pad1>
+	<pad2 name="CUE 2" color="color &apos;red&apos;">hot_cue 2</pad2>
+	<pad3 name="PRELISTEN" color="color &apos;white&apos;">prelisten</pad3>
+	<pad4 color="color &apos;green&apos;" name="FIRST BEAT">set_firstbeat</pad4>
+	<pad5 name="BEAT_TAP" color="color &apos;magenta&apos;">beat_tap</pad5>
+	<pad6 name="BPM_MULTI" color="color &apos;magenta&apos;">reanalyze multi</pad6>
+	<pad7 name="-16 BEATS" color="color &apos;blue&apos;">goto -16</pad7>
+	<pad8  name="+16 BEATS" color="color &apos;blue&apos;">goto +16</pad8>
+	<pad9 name="CUE 1" color="color &apos;red&apos;">hot_cue 1</pad9>
+	<pad10 name="CUE 2" color="color &apos;yellow&apos;">hot_cue 2</pad10>
+	<pad11 name="BRAKE" color="color &apos;green&apos;">padfx &quot;Loop Out&quot; 30%</pad11>
+	<pad12 color="color &apos;white&apos;" name="FIRST BEAT">set_firstbeat</pad12>
+	<pad13 name="S_BRAKE" color="color &apos;violet&apos;">hot_cue 3</pad13>
+	<pad14 name="BACKSPIN" color="color &apos;pink&apos;">hot_cue 4</pad14>
+	<pad15 name="BRAKE" color="color &apos;red&apos;">padfx &quot;Brakestart&quot; 0.5</pad15>
+	<pad16 color="color &apos;white&apos;" name="PRELISTEN">prelisten</pad16>
+	<shift_pad6 name="BPM_SINGLE">reanalyze</shift_pad6>
+</page>
