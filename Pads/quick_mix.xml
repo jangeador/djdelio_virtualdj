@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page name="quick_mix">
+    <pad1 color="red" name="Mix1">action_deck 1 ? deck left hot_cue 1 &amp; deck right cue_stop : deck right hot_cue 1 &amp; deck left cue_stop
+    </pad1>
+    <pad2 color="red" name="Mix2">action_deck 1 ? deck left hot_cue 2 &amp; deck right cue_stop : deck right hot_cue 2 &amp; deck left cue_stop
+    </pad2>
+    <pad3 color="red" name="Mix3">action_deck 1 ? deck left hot_cue 3 &amp; deck right cue_stop : deck right hot_cue 3 &amp; deck left cue_stop
+    </pad3>
+    <pad4 color="red" name="Mix4">action_deck 1 ? deck left hot_cue 4 &amp; deck right cue_stop : deck right hot_cue 4 &amp; deck left cue_stop
+    </pad4>
+</page>
