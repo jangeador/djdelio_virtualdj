@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+	<pad1 name="Elo20" color="color &apos;orange&apos;">padfx &quot;loop out&quot; 20% smart_temporary &amp; padfx &quot;echo&quot; 40% 25% smart_temporary</pad1>
+	<pad2 name="Elo25" color="color &apos;orange&apos;">padfx &quot;loop out&quot; 25% smart_temporary &amp; padfx &quot;echo&quot; 40% 25% smart_temporary</pad2>
+	<pad3 name="Elo30" color="color &apos;orange&apos;">padfx &quot;loop out&quot; 30% smart_temporary &amp; padfx &quot;echo&quot; 40% 30% smart_temporary</pad3>
+	<pad4 name="Elo50" color="color &apos;orange&apos;">padfx &quot;loop out&quot; 50% smart_temporary &amp; padfx &quot;echo&quot; 40% 50% smart_temporary</pad4>
+	<pad5 name="LO-20" color="color &apos;green&apos;">padfx &quot;loop out&quot; 20%</pad5>
+	<pad6 name="LO-25" color="color &apos;green&apos;">padfx &quot;loop out&quot; 25%</pad6>
+	<pad7 name="LO-30" color="color &apos;green&apos;">padfx &quot;loop out&quot; 30%</pad7>
+	<pad8 name="LO-50" color="color &apos;green&apos;">padfx &quot;loop out&quot; 50%</pad8>
+</page>
