@@ -3,9 +3,9 @@
 	<pad1 name="&lt; LOOP 1/2" color="loop 0.5 ? blink 700ms ? constant &apos;green&apos; :: loop 0.25 ? blink 300ms ? constant &apos;green&apos; :: loop 0.125 ? blink 300ms ? constant &apos;green&apos; :: loop 0.0625 ? blink 300ms ? constant &apos;green&apos; :: loop 0.03125 ? blink 300ms ? constant &apos;green&apos; :: constant &apos;green&apos;">loop ? loop_half : loop 0.5</pad1>
 	<pad2 name="LOOP 1" color="loop 1 ? blink 700ms ? constant &apos;green&apos;  :: constant &apos;green&apos;">loop 1</pad2>
 	<pad3 name="LOOP 2" color="loop 2 ? blink 700ms ? constant &apos;green&apos;  :: constant &apos;green&apos;">loop 2</pad3>
-	<pad4 name="LOOP 4 &gt;" color="loop 4 ? blink 700ms ? constant &apos;green&apos; :: loop 8 ? blink 300ms ? constant &apos;green&apos; :: loop 16 ? blink 300ms ? constant &apos;green&apos; :: loop 32 ? blink 300ms ? constant &apos;green&apos; :: loop 64 ? blink 300ms ? constant &apos;green&apos;  :: constant &apos;green&apos;" >loop ? loop_double : loop 4</pad4>
-	<pad5 name="KeyLoopDown" color="color &apos;magenta&apos;">effect_active &apos;keyLoopDown&apos;</pad5>
-	<pad6 name="KeyLoopUp" color="color &apos;magenta&apos;">effect_active &apos;keyLoopUp&apos;</pad6>
+	<pad4 name="LOOP 4 &gt;" color="loop 4 ? blink 700ms ? constant &apos;green&apos; :: loop 8 ? blink 300ms ? constant &apos;green&apos; :: loop 16 ? blink 300ms ? constant &apos;green&apos; :: loop 32 ? blink 300ms ? constant &apos;green&apos; :: loop 64 ? blink 300ms ? constant &apos;green&apos;  :: constant &apos;green&apos;">loop ? loop_double : loop 4</pad4>
+	<pad5 name="SLIPBRAKE" color="color &apos;magenta&apos;">padfx &apos;slipBrake8&apos; 0.15</pad5>
+	<pad6 name="LOOP OUT 1/2" color="color &apos;magenta&apos;">padfx &apos;loop out&apos; 0.15 0.25 0.75 0.50</pad6>
 	<pad7 name="LOOP OUT" color="color &apos;red&apos;">loop_out</pad7>
 	<pad8 name="ADJUST" color="color &apos;blue&apos;">loop_adjust &apos;move&apos;</pad8>
 </page>
