@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page name="djc_loops">
+	<pad1 name="LOOP 1/8 v" color="blink 500ms ? constant &apos;orange&apos; : off">loop 0.125 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopdown&apos; temporary &amp; slip temporary</pad1>
+	<pad2 name="LOOP 1/4 v" color="blink 500ms ? constant &apos;orange&apos; : off">loop 0.25 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopdown&apos; temporary &amp; slip temporary1</pad2>
+	<pad3 name="LOOP 1/2 v" color="blink 500ms ? constant &apos;orange&apos; : off">loop 0.5 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopdown&apos; temporary &amp; slip temporary</pad3>
+	<pad4 name="LOOP 1 v" color="blink 500ms ? constant &apos;orange&apos; : off" >loop 1 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopdown&apos; temporary &amp; slip temporary</pad4>
+	<pad5 name="LOOP 1/8 ^" color="blink 500ms ? constant &apos;marine&apos; : off">loop 0.125 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopup&apos; temporary &amp; slip temporary</pad5>
+	<pad6 name="LOOP 1/4 ^" color="blink 500ms ? constant &apos;marine&apos; : off">loop 0.25 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopup&apos; temporary &amp; slip temporary</pad6>
+	<pad7 name="LOOP 1/2 ^" color="blink 500ms ? constant &apos;marine&apos; : off">loop 0.5 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopup&apos; temporary &amp; slip temporary</pad7>
+	<pad8 name="LOOP 1 ^" color="blink 500ms ? constant &apos;marine&apos; : off">loop 1 temporary &amp; effect_active &apos;loopcut&apos; temporary &amp; effect_slider &apos;loopcut&apos; 1 66% &amp; effect_active &apos;keyloopup&apos; temporary &amp; slip temporary</pad8>
+</page>
